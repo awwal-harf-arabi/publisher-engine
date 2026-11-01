@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awwal-publisher"
+version = "0.1.0"
+description = "A language-aware, editorially gated book publishing build system"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6,<7", "WeasyPrint>=65,<70", "Pillow>=10,<13"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+awwal-publish = "awwal_publisher.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
